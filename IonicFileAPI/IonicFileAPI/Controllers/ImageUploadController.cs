@@ -21,8 +21,8 @@ namespace IonicFileAPI.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        [HttpPost("UploadFiles")]
-        public async Task<IActionResult> Post(HttpRequestMessage msg)
+        [HttpPost]
+        public async Task<IActionResult> UploadFiles(HttpRequestMessage msg)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace IonicFileAPI.Controllers
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
             return Ok();
