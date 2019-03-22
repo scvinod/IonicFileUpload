@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace IonicFileAPI.Controllers
 {
     [Produces("application/json")]
-    [Route("api/ImageUpload")]
     public class ImageUploadController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
@@ -22,6 +21,7 @@ namespace IonicFileAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/ImageUpload/UploadFiles")]
         public async Task<IActionResult> UploadFiles(HttpRequestMessage msg)
         {
             try
